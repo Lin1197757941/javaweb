@@ -24,7 +24,7 @@ public class AddOrder extends HttpServlet {
         //查询该商品库存
         String sql_goods="select * from goods where goods_id=?";
         Goods goods = dao.getInstance(Goods.class, sql_goods, Integer.parseInt(goods_id));
-
+        //判断该商品库存
         if(goods.getStock()>0) {
             if (instance == null) {
 
